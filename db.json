@@ -1,0 +1,464 @@
+{
+  "users": [
+    {
+      "email": "user1@mail.com",
+      "password": "$2a$10$MSkNSAulPWa3JMefGpZsTOW3i5Wu6H5XPh9GukD6L4Y/IQkfTW93K",
+      "name": "Usuario 1",
+      "surname": "Apellidos",
+      "phone": "999888777",
+      "user": "User1",
+      "id": 1,
+      "likes": [],
+      "dislikes": []
+    },
+    {
+      "email": "rsgg@gmail.com",
+      "password": "$2a$10$eZBbtvCeB.KB5/G4XfOWIOIYnd3oiCDSYqXiaUUxCOy5Rkcr1cpYi",
+      "name": "Rebeca",
+      "surname": "Gonzalez",
+      "phone": "648506499",
+      "user": "rsgg",
+      "id": 2,
+      "likes": [
+        1,
+        3
+      ],
+      "dislikes": [
+        1
+      ]
+    },
+    {
+      "email": "ejemplo4@gmail.com",
+      "password": "$2a$10$Y5BuhYAtkpEVfzYaehtf4O2kgxlb5tiKa5qyqnEpuWLhJHIa3CV3i",
+      "name": "Rebeca",
+      "surname": "Gonzalez",
+      "phone": "648506499",
+      "user": "ejemplo4@gmail.com",
+      "followers": [],
+      "following": [],
+      "likes": [],
+      "dislikes": [],
+      "id": 6
+    },
+    {
+      "email": "ejemplo5@gmail.com",
+      "password": "$2a$10$e.O.vO4/NWVsouGv7mMxZOuTD0x2NCke6IX4O8iOekd7Dz8seQcu.",
+      "name": "Rebeca",
+      "surname": "Gonzalez",
+      "phone": "648596499",
+      "user": "ejemplo5",
+      "followers": [],
+      "following": [],
+      "likes": [],
+      "dislikes": [],
+      "id": 7
+    },
+    {
+      "email": "ejemplo6@gmail.com",
+      "password": "$2a$10$v8wuKETpxBGI47CRh1J0R.Kx6kaEQPgCQyfe.9F1O1juQxJTMVLsC",
+      "name": "Rebeca",
+      "surname": "Gonzalez",
+      "phone": "648506499",
+      "user": "ejemplo6@gmail.com",
+      "followers": [],
+      "following": [],
+      "likes": [],
+      "dislikes": [],
+      "id": 8
+    }
+  ],
+  "history": [
+    {
+      "idUSer": 2,
+      "likes": [
+        1,
+        2
+      ],
+      "dislikes": [
+        3,
+        4
+      ]
+    }
+  ],
+  "follows": [
+    {
+      "id": 1,
+      "followers": [
+        {
+          "userId": 2
+        }
+      ],
+      "following": [
+        {
+          "userId": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "followers": [
+        {
+          "userId": 2
+        }
+      ],
+      "following": [
+        {
+          "userId": 2
+        },
+        {
+          "userId": 1
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "followers": [],
+      "following": []
+    },
+    {
+      "id": "7",
+      "followers": [],
+      "following": []
+    },
+    {
+      "id": "8",
+      "followers": [],
+      "following": []
+    }
+  ],
+  "photos": [
+    {
+      "id": 1,
+      "url": "https://images.unsplash.com/photo-1559628129-67cf63b72248?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+      "title": "Gallo al natural",
+      "description": "Una foto simple de un gallo con el fondo medio desenfocado",
+      "date": "2012-04-23T18:25:43.511Z",
+      "upvotes": 331,
+      "downvotes": 91,
+      "tags": [
+        "naturaleza",
+        "gallo",
+        "animales"
+      ],
+      "comments": [
+        {
+          "commentText": "hola",
+          "userId": 2,
+          "username": "rsgg"
+        },
+        {
+          "commentText": "bonito",
+          "userId": 2,
+          "username": "rsgg"
+        },
+        {
+          "commentText": "pio",
+          "userId": 2,
+          "username": "rsgg"
+        },
+        {
+          "userId": 2,
+          "username": "rsgg",
+          "commentText": "pajaro"
+        },
+        {
+          "userId": 2,
+          "username": "rsgg",
+          "commentText": "gallo"
+        },
+        {
+          "userId": 2,
+          "username": "rsgg",
+          "commentText": "ave"
+        },
+        {
+          "userId": 2,
+          "username": "rsgg",
+          "commentText": "hola"
+        },
+        {
+          "userId": 3,
+          "username": "ejemplo12",
+          "commentText": "bonita foto"
+        }
+      ],
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "url": "https://www.timetravelturtle.com/wp-content/uploads/2019/11/Mont-St-Michel-2019-356_new.jpg",
+      "title": "Monte San Miguel",
+      "description": "Foto del monte San Miguel",
+      "date": "2013-04-23T18:21:43.511Z",
+      "upvotes": 916,
+      "downvotes": 126,
+      "tags": [
+        "monte",
+        "paisaje"
+      ],
+      "comments": [
+        {
+          "commentText": "hermoso",
+          "userId": 2,
+          "username": "rsgg"
+        },
+        {
+          "commentText": "lindo",
+          "userId": 2,
+          "username": "rsgg"
+        },
+        {
+          "userId": 2,
+          "username": "rsgg",
+          "commentText": ""
+        },
+        {
+          "userId": 2,
+          "username": "rsgg",
+          "commentText": "a"
+        },
+        {
+          "userId": 2,
+          "username": "rsgg",
+          "commentText": "b"
+        },
+        {
+          "userId": 2,
+          "username": "rsgg",
+          "commentText": "mente"
+        },
+        {
+          "userId": 2,
+          "username": "rsgg",
+          "commentText": "haha"
+        },
+        {
+          "userId": 3,
+          "username": "ejemplo12",
+          "commentText": "lindo"
+        }
+      ],
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "url": "https://clipartart.com/images/worst-clipart-ever-1.jpg",
+      "title": "Clipart del güeno",
+      "description": "Por si quieres acompañar las diapositivas con un poco de arte abstracto",
+      "date": "1024-04-23T18:21:43.511Z",
+      "upvotes": 1,
+      "downvotes": 73648,
+      "tags": [
+        "clipart",
+        "arte",
+        "dibujo"
+      ],
+      "comments": [
+        {
+          "commentText": "feo",
+          "userId": 2,
+          "username": "rsgg"
+        },
+        {
+          "userId": 2,
+          "username": "rsgg",
+          "commentText": ""
+        }
+      ],
+      "userId": 1
+    },
+    {
+      "id": 4,
+      "url": "https://img.vixdata.io/pd/jpg-large/es/sites/default/files/imj/elgranchef/R/Receta-de-paella-1.jpg",
+      "title": "Paella normalita",
+      "description": "Primera paella que hago, creo que no ha salido muy bien",
+      "date": "2016-04-23T18:21:43.511Z",
+      "upvotes": 75,
+      "downvotes": 5,
+      "tags": [
+        "comida",
+        "paella"
+      ],
+      "comments": [
+        {
+          "commentText": "paella",
+          "userId": 2,
+          "username": "rsgg"
+        },
+        {
+          "userId": 2,
+          "username": "rsgg",
+          "commentText": "rico"
+        }
+      ],
+      "userId": 1
+    },
+    {
+      "id": 5,
+      "url": "https://i.pinimg.com/originals/04/b2/ed/04b2ed94021d06fbec19b3a29372e7e1.jpg",
+      "title": "Tortuga comiendo fresa",
+      "description": "Mi tortuga",
+      "date": "2016-04-23T18:20:43.511Z",
+      "upvotes": 61,
+      "downvotes": 42,
+      "tags": [
+        "comida",
+        "animales",
+        "tortuga"
+      ],
+      "comments": [],
+      "userId": 1
+    },
+    {
+      "id": 6,
+      "url": "https://www.dzoom.org.es/wp-content/uploads/2017/07/seebensee-2384369-810x540.jpg",
+      "title": "Paisaje sevillano típico",
+      "description": "Foto tomada en uno de los campos de las afueras de Sevilla",
+      "date": "2015-04-23T18:20:43.511Z",
+      "upvotes": 39844,
+      "downvotes": 217,
+      "tags": [
+        "paisaje",
+        "naturaleza",
+        "sevilla"
+      ],
+      "comments": [
+        {
+          "userId": 2,
+          "username": "rsgg",
+          "commentText": "hermoso"
+        }
+      ],
+      "userId": 1
+    },
+    {
+      "id": 7,
+      "url": "https://nuevo-estilo.micasarevista.com/var/decoracion/storage/images/nuevo-estilo/casas-lujo/casa-junto-al-rio/un-cenador-sobre-el-agua/913643-1-esl-ES/un-cenador-sobre-el-agua_ampliacion.jpg",
+      "title": "Casa junto al río",
+      "description": "Dibujo hecho por mi sobrino",
+      "date": "2019-04-23T18:20:43.511Z",
+      "upvotes": 8,
+      "downvotes": 0,
+      "tags": [
+        "paisaje",
+        "dibujo",
+        "río"
+      ],
+      "comments": [
+        {
+          "userId": 2,
+          "username": "rsgg",
+          "commentText": "bonito"
+        }
+      ],
+      "userId": 1
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Hausziege_04.jpg",
+      "title": "Cabra",
+      "description": "cabra linda pechocha",
+      "date": "2020-05-23T18:20:43.511Z",
+      "upvotes": 0,
+      "downvotes": 0,
+      "tags": [
+        "cabra",
+        "cute"
+      ],
+      "userId": "2",
+      "comments": [
+        {
+          "commentText": "Hola",
+          "userId": 2,
+          "username": "rsgg"
+        },
+        {
+          "commentText": "linda",
+          "userId": 2,
+          "username": "rsgg"
+        },
+        {
+          "userId": 2,
+          "username": "rsgg",
+          "commentText": "bellaaf"
+        },
+        {
+          "userId": 2,
+          "username": "rsgg",
+          "commentText": "bellaaf"
+        },
+        {
+          "userId": 2,
+          "username": "rsgg",
+          "commentText": "bellaaf"
+        },
+        {
+          "userId": 2,
+          "username": "rsgg",
+          "commentText": "cosa"
+        },
+        {
+          "userId": 2,
+          "username": "rsgg",
+          "commentText": "acosa"
+        },
+        {
+          "userId": 2,
+          "username": "rsgg",
+          "commentText": "nacho"
+        },
+        {
+          "userId": 2,
+          "username": "rsgg",
+          "commentText": "tacho"
+        },
+        {
+          "userId": 2,
+          "username": "rsgg",
+          "commentText": "cosita"
+        }
+      ],
+      "id": 8,
+      "username": "rsgg"
+    },
+    {
+      "url": "https://i.pinimg.com/originals/70/fa/97/70fa97bac09e524bae4c006a1ead5512.jpg",
+      "title": "Perrito",
+      "description": "Perro bonito",
+      "date": "Fri Jun 05 2020 22:46:51 GMT+0200 (hora de verano de Europa central)",
+      "upvotes": 0,
+      "downvotes": 0,
+      "tags": [
+        "perro",
+        "cute",
+        "hermoso"
+      ],
+      "userId": "2",
+      "comments": [],
+      "id": 9
+    },
+    {
+      "url": "https://i2.wp.com/thehappening.com/wp-content/uploads/2018/12/sombreros-perritos-7.jpg?fit=1024%2C694&ssl=1",
+      "title": "Perro",
+      "description": "Perrote",
+      "date": "Fri Jun 05 2020 23:31:18 GMT+0200 (hora de verano de Europa central)",
+      "upvotes": 0,
+      "downvotes": 0,
+      "tags": [
+        "perro",
+        "cute",
+        "hermoso"
+      ],
+      "userId": "2",
+      "comments": [],
+      "id": 11
+    }
+  ],
+  "tags": [
+    "comida",
+    "paisaje",
+    "cute",
+    "naturaleza",
+    "sevilla",
+    "arte"
+  ]
+}
