@@ -71,7 +71,8 @@ export default {
       let url = $("#url-input").val();
       let title = $("#title-input").val();
       let description = $("#description-input").val();
-      let tags = $("#tags-input").val().split(",").map(tag => tag.trim());
+      let t = $("#tags-input").val().split(",").map(tag => tag.trim());
+      let tags=new Set(t);
       let date = new Date().toString();
 
 
