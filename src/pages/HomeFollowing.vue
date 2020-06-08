@@ -175,14 +175,30 @@ export default {
             loggedUser:{},
             isAutenticado:Vue.getToken()!=null,
             comment:{},
+            follows:[],
         }
     },
   watch: {
     fotos: function() {
       console.log(this.fotos.upvotes);
+    },
+    follows: function() {
+      console.log(this.follows);
     }
   },
     methods: {
+      getFollows(){
+          var ref = this;
+          axios.get('http://localhost:3000/follows/'+localStorage.getItem('id')).then(function(response) {
+                if (response.status == 200) {
+                  
+                  ref.follows=response.data;
+                  console.log(ref.follows);
+                }
+            }).catch(function(error) {
+                console.log("Error al pedir los follows: " + error);
+            });
+        },
 
         getStringDate(d){
           var dat= new Date(Date.parse(d));
@@ -202,10 +218,11 @@ export default {
                       //let date = new Date(Date.parse(element.date));
                       //element.date=date.getFullYear()+"/"+date.getMonth()+"/"+date.getDay();
                       const allPhotos = Array.from(response.data);
-                      var followingIds = ref.users.map(u => u.id);
+                      var followingIds = ref.follows.following.map(u => u.userId);
+                      console.log("FollowingIds");
+                      console.log(followingIds);
 
                        ref.fotos = allPhotos.filter(p => followingIds.includes(p.userId));
-                      
 
                     }
             }).catch(function(error) {
@@ -218,6 +235,7 @@ export default {
             axios.get('http://localhost:3000/users').then(function(response) {
                 if (response.status == 200) {
                    ref.users= response.data;
+
                 }
             }).catch(function(error) {
                 console.log("Error al pedir las fotos: " + error);
@@ -365,9 +383,10 @@ export default {
     }, 
     async beforeMount() {
       
+        this.getFollows();
+        this.getLoggedUser();
         this.loadUsers();
         this.loadPhotos();
-        this.getLoggedUser();
         //this.getUsername(17);
     },
 }

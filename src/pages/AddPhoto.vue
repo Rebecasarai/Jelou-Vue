@@ -26,9 +26,13 @@
                 <input type="text" id="description-input" class="fadeIn second" name="login" placeholder="Descripción">
                 <!--<input type="text" id="url-input" class="fadeIn third" name="login" placeholder="URL Personalizada">-->
 
-                <a class="pb-0 fadeIn third" strong>Añadir etiquetas <i class="fas fa-tag verde-ico " ></i></a>
-                <p class="p-0 m-0 fadeIn third">Escribelas separando por comas:</p>
-                <input type="text" id="tags-input" class="fadeIn third" name="login" placeholder="Ejemplo: Planta, Zen..">
+                <a class="pb-0 fadeIn third" strong>Añadir etiquetas: <i class="fas fa-tag verde-ico " ></i></a>
+                <button v-for="tag in tagsSelected" :key="tag.tag" @click="removeTag(tag)" type="button" class="btn btn-light btn-sm mr-2 mt-2">{{tag.tag}}</button >
+                
+                <p class="p-0 m-0 fadeIn third">Escribelas para buscar en el sistema:</p>
+                
+                <input type="text" id="tags-input" v-model="tagsInput" @keyup="searchTags()" class="fadeIn third" name="login" placeholder="Ejemplo: Planta, Zen..">
+                <button v-for="tag in tagsToShow" :key="tag.id" @click="selecTag(tag)" type="button" class="btn btn-light btn-sm mr-2 mt-2">{{tag.tag}}</button >
                 
                 <a href="#" class="pb-0 fadeIn third" strong>
                   <router-link
@@ -68,9 +72,40 @@ export default {
   data() {
     return {
       fotos: [],
+      tagsInput:"",
+      tags:[],
+      tagsToShow:[],
+      tagsSelected:[],
     }
   },
   methods:{
+    removeTag(tag){
+      var index = this.tagsSelected.indexOf(tag);
+
+      if (index > -1) {
+        this.tagsSelected.splice(index, 1);
+      }
+    },
+    selecTag(tag){
+      this.tagsSelected.push(tag);
+      this.tagsInput = [];
+    },
+    loadTags: function() {
+            var ref = this;
+            axios.get('http://localhost:3000/tags').then(function(response) {
+                if (response.status == 200) {
+                    ref.tags= response.data;
+                    }
+            }).catch(function(error) {
+                console.log("Error al pedir las tags: " + error);
+            });
+        },
+    searchTags(){
+      let tagsInputArray = this.tagsInput.split(",").map(tag => tag.trim());
+      console.log(tagsInputArray);
+      this.tagsToShow = this.tags.filter(t => this.tagsInput== t.tag || t.tag.startsWith(this.tagsInput) );
+      console.log(this.tagsToShow);
+    },
      upload: function(){
       event.preventDefault();
       $("#errors-container").empty();
@@ -148,7 +183,7 @@ export default {
 
  },
  beforeMount(){
-    
+    this.loadTags();
  },
 }
 </script>
