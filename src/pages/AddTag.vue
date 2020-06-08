@@ -58,7 +58,8 @@ export default {
       event.preventDefault();
       $("#errors-container").empty();
 
-      if(this.tags.includes(this.newTag)){
+      let l = this.tags.map(t=> t.tag);
+      if(l.includes(this.newTag)){
         $("#errors-container").append(this.getError("Ya existe una etiqueta con ese nombre"));
       }else{
       
