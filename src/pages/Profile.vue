@@ -29,7 +29,7 @@
                 
               </div>
 
-              <div v-images-loaded:on.progress="imageProgress" style="height:auto !important">
+              <!--<div v-images-loaded:on.progress="imageProgress" style="height:auto !important">-->
                   <div v-masonry transition-duration="0.3s" item-selector=".grid__item" :origin-top="true" :horizontal-order="false" 
                 height="auto" style="height: auto !important; background-color:white;">
                   <div class="row" style="height: auto !important; background-color:white;">
@@ -49,7 +49,7 @@
                     </div>  
                   </div>
               </div>
-              </div>
+              <!--</div>-->
 
 
               <!-- Modal -->
@@ -160,17 +160,18 @@
 
 
 <script>
-/* eslint-disable */import axios from 'axios'
+/* eslint-disable */
+import axios from 'axios'
 import $ from 'jquery'
 
 import {
     VueMasonryPlugin
 } from 'vue-masonry';
 
-Vue.use(VueMasonryPlugin)
+//Vue.use(VueMasonryPlugin)
 import Vue from 'vue'
 
-import imagesLoaded from 'vue-images-loaded'
+//import imagesLoaded from 'vue-images-loaded'
 
 
 export default {
@@ -197,9 +198,9 @@ export default {
     created() {
       
     },
-    directives: {
+    /*directives: {
         imagesLoaded
-    },
+    },*/
   watch: {
     foto: function() {
       console.log(this.foto.upvotes);
@@ -212,6 +213,9 @@ export default {
       console.log(this.follows);
       console.log(this.follows.followers);
     },
+    fotos: function(){
+      console.log(this.fotos);
+    }
   },
     methods: {
       showFollwers: function(){
@@ -407,6 +411,7 @@ export default {
         this.loadPhotos();
         //ref.$router.go()
         $('data-v-7a2b6835').removeAttr("height").attr("style","height:auto !important");
+        
 
     },
 }
