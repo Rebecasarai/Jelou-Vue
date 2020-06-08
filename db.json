@@ -454,11 +454,33 @@
     }
   ],
   "tags": [
-    "comida",
-    "paisaje",
-    "cute",
-    "naturaleza",
-    "sevilla",
-    "arte"
+    {
+      "id": 1,
+      "tag": "comida"
+    },
+    {
+      "id": 2,
+      "tag": "paisaje"
+    },
+    {
+      "id": 3,
+      "tag": "cute"
+    },
+    {
+      "id": 4,
+      "tag": "naturaleza"
+    },
+    {
+      "id": 5,
+      "tag": "sevilla"
+    },
+    {
+      "id": 6,
+      "tag": "arte"
+    },
+    {
+      "tag": "gallo",
+      "id": 7
+    }
   ]
 }

@@ -17,7 +17,7 @@
               <div class="list-group " >
                   <a href="#" v-on:click="mostrarFotosPorEtiqueta(t)" v-for="t in this.tags" :key="t.id" 
                   class="list-group-item list-group-item-action verde" 
-                  v-bind:class="{ active: t==tag }"> {{t}} <span class="float-right"></span></a>
+                  v-bind:class="{ active: t.tag==tag }"> {{t.tag}} <span class="float-right"></span></a>
                   
                 </div>
             </div>

@@ -26,7 +26,7 @@
           <div class="fadeIn fourth pb-4">
           <h3 class="text-center pb-0 pt-4 mb-0">Algunas etiquetas existentes</h3>
         <hr class="new4">
-        <h5 class="text-center" v-for="t in this.tags" :key="t">{{t}}</h5>
+        <h5 class="text-center" v-for="t in this.tags" :key="t.tag">{{t.tag}}</h5>
         </div>
         </div>
         <div class="col-sm-2"></div>
@@ -62,21 +62,41 @@ export default {
         $("#errors-container").append(this.getError("Ya existe una etiqueta con ese nombre"));
       }else{
       
-      let t = this.newTag;
-
+      let tag = 
+      {
+        tag: this.newTag
+      };
+      /*"tags": [
+    {"id":1, 
+    "tag":"comida"},
+    {"id":2, 
+      "tag":"paisaje"},
+    {"id":3, 
+      "tag":"cute"},
+    {"id":4, 
+      "tag":"naturaleza"},
+    {"id":5, 
+    "tag":"sevilla"},
+    {"id":6, 
+    "tag":"arte"}
+  ]*/
       // Aquí hacemos el envío
       var ref= this;
       fetch('http://localhost:3000/tags/', {
       method: "POST",
-      body: JSON.stringify(t),
+      body: JSON.stringify(tag),
       headers:{
+      'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json'
       }
       }).then(function(response) {
         if(response.ok){
           console.log(response);
+          ref.tags.push(tag);
+          
           //ref.$router.go();
         } else {
+          console.log(response);
           $("#errors-container").append(ref.getError(response.statusText));
         }
         }).catch(function(error){
