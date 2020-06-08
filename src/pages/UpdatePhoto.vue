@@ -95,13 +95,12 @@ export default {
         enviar: function(){
           event.preventDefault();
 
-
           $("#errors-container").empty();
           if(!Vue.hasBadWords(title)&&!Vue.hasBadWords(description)){
           let photo = {
           "description":this.foto.description,
           "title": this.foto.title,
-          "tags":this.foto.tags,
+          "tags": new Set(this.foto.tags),
           }
           let ref= this;
           // Aquí hacemos el envío

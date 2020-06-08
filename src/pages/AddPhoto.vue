@@ -30,7 +30,13 @@
                 <p class="p-0 m-0 fadeIn third">Escribelas separando por comas:</p>
                 <input type="text" id="tags-input" class="fadeIn third" name="login" placeholder="Ejemplo: Planta, Zen..">
                 
-                <a href="addTag.html" class="pb-0 fadeIn third" strong>Crear nueva <i class="fas fa-tag verde-ico " ></i></a>
+                <a href="#" class="pb-0 fadeIn third" strong>
+                  <router-link
+                    to="addTag"
+                    exact
+                  >
+                    Crear nueva <font-awesome-icon icon="tag" />
+                  </router-link></a>
                 <p strong class="fadeIn third">Hacer imagen privada 
                     <label class="switch">
                     <input type="checkbox">
