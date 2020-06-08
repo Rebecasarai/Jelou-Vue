@@ -15,7 +15,7 @@
           <div id="collapseOne" class="collapse show" data-parent="#accordion">
             <div class="card-body card-body-explore">
               <div class="list-group " >
-                  <a href="#" v-on:click="mostrarFotosPorEtiqueta(t)" v-for="t in this.tags" :key="t.id" 
+                  <a href="#" v-on:click="mostrarFotosPorEtiqueta(t.tag)" v-for="t in this.tags" :key="t.id" 
                   class="list-group-item list-group-item-action verde" 
                   v-bind:class="{ active: t.tag==tag }"> {{t.tag}} <span class="float-right"></span></a>
                   
