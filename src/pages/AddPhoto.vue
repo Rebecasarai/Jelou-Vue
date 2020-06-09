@@ -43,7 +43,7 @@
                   </router-link></a>
                 <p strong class="fadeIn third">Hacer imagen privada 
                     <label class="switch">
-                    <input type="checkbox">
+                    <input v-model="photoPrivate" type="checkbox" >
                     <span class="slider round"></span>
                   </label></p>
                 <input type="submit" class="fadeIn fourth"  v-on:click="upload" value="Publicar">
@@ -76,6 +76,7 @@ export default {
       tags:[],
       tagsToShow:[],
       tagsSelected:[],
+      photoPrivate:false,
     }
   },
   methods:{
@@ -135,7 +136,8 @@ export default {
       "downvotes": 0,
       "tags": t,
       "userId": localStorage.getItem("id"),
-      "comments": []
+      "comments": [],
+      "public": !this.photoPrivate
     }
 
     console.log(photo);

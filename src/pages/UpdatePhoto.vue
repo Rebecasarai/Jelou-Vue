@@ -37,7 +37,7 @@
                   </router-link></a>
                 <p strong class="fadeIn third mt-2">Hacer imagen privada 
                     <label class="switch">
-                    <input type="checkbox">
+                    <input type="checkbox" v-model="foto.public" >
                     <span class="slider round"></span>
                   </label></p>
                 <input type="submit" class="fadeIn fourth" v-on:click="enviar" value="Guardar">
@@ -141,6 +141,7 @@ export default {
           "description":this.foto.description,
           "title": this.foto.title,
           "tags": this.foto.tags,
+          "public": this.foto.public
           }
           let ref= this;
           // Aquí hacemos el envío

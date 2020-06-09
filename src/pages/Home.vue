@@ -140,7 +140,7 @@
                   <div class="views">{{getStringDate(foto.date)}}
                   </div>
                   <div class="stats text-left">
-                     Público
+                     <span v-if="foto.public">Público</span><span v-else>Privado</span>
                   </div>
                    
                 </div>
