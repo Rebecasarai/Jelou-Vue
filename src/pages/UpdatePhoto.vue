@@ -96,7 +96,7 @@ export default {
           event.preventDefault();
 
           $("#errors-container").empty();
-          if(!Vue.hasBadWords(title)&&!Vue.hasBadWords(description)){
+          if(!Vue.hasBadWords(this.foto.title)&&!Vue.hasBadWords(this.foto.description)){
           let photo = {
           "description":this.foto.description,
           "title": this.foto.title,
