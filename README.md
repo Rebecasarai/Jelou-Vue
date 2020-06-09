@@ -1,24 +1,17 @@
 # jelou
 
-## Project setup
+## Setup del proyecto (Debe ejecutarse la primera vez que se abre/descarga el proyecto)
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Inicia la base de datos
+```
+json-server db.json -m ./node_modules/json-server-auth -r routes.json
+```
+
+### Compila e inicia applicación web
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
