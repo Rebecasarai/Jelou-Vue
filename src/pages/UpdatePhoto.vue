@@ -19,14 +19,22 @@
                 <input type="text" class="fadeIn second" name="title" v-model="foto.title">
                 <input type="text" class="fadeIn second" name="login" v-model="foto.description">
 
-                <a class="pb-0 fadeIn third" strong>Añadir etiquetas <i class="fas fa-tag verde-ico " ></i></a>
-                <p class="p-0 m-0 fadeIn third">Escribelas separando por comas:</p>
-                <input v-model="foto.tags" id="tags-input" type="text" class="fadeIn third" name="login" placeholder="Ejemplo: Planta, Zen..">
-                <a href="addTag.html" class="pb-0 fadeIn third" strong>Crear nueva <i class="fas fa-tag verde-ico " ></i></a>
+
+                 <a class="pb-0 fadeIn third" strong>Etiquetas: <i class="fas fa-tag verde-ico " ></i></a>
+                 <button v-for="tag in foto.tags" :key="tag" @click="removeTag(tag)" type="button" class="btn btn-light btn-sm mr-2 mt-2">{{tag}}</button >
                 
-                    
-                <button v-for="tag in foto.tags" :key="tag" href="#" v-on:click="removeTag"
-                 type="button" class="btn btn-light btn-sm mr-2 mt-2">{{tag}} x</button >
+                <p class="p-0 m-0 fadeIn third">Escribelas para buscar en el sistema:</p>
+                
+                <input type="text" id="tags-input" v-model="tagsInput" @keyup="searchTags()" class="fadeIn third" name="login" placeholder="Ejemplo: Planta, Zen..">
+                <button v-for="tag in tagsToShow" :key="tag.id" @click="selecTag(tag.tag)" type="button" class="btn btn-light btn-sm mr-2 mt-2">{{tag.tag}}</button >
+                
+                <a href="#" class="pb-0 fadeIn third" strong>
+                  <router-link
+                    to="addTag"
+                    exact
+                  >
+                    Crear nueva <font-awesome-icon icon="tag" />
+                  </router-link></a>
                 <p strong class="fadeIn third mt-2">Hacer imagen privada 
                     <label class="switch">
                     <input type="checkbox">
@@ -59,9 +67,37 @@ export default {
     data() {
         return {
             foto: [],
+            tagsInput:"",
+            tags:[],
+            tagsToShow:[],
         }
     },
     methods: {
+        selecTag(tag){
+          var index = this.foto.tags.indexOf(tag);
+
+          if (!(index > -1)) {
+            this.foto.tags.push(tag);
+          }
+
+          this.tagsInput = [];
+        },
+        loadTags: function() {
+            var ref = this;
+            axios.get('http://localhost:3000/tags').then(function(response) {
+                if (response.status == 200) {
+                    ref.tags= response.data;
+                    }
+            }).catch(function(error) {
+                console.log("Error al pedir las tags: " + error);
+            });
+        },
+        searchTags(){
+          let tagsInputArray = this.tagsInput.split(",").map(tag => tag.trim());
+          console.log(tagsInputArray);
+          this.tagsToShow = this.tags.filter(t => this.tagsInput== t.tag || t.tag.startsWith(this.tagsInput) );
+          console.log(this.tagsToShow);
+        },
         loadFoto: function() {
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
@@ -71,22 +107,24 @@ export default {
                 if (response.status == 200) {
                   ref.foto=response.data;
                     //showPhoto(response.data)
+                    console.log(ref.foto.tags);
                 }
             }).catch(function(error) {
                 console.log("Error al pedir la foto: " + error);
             });
         },
-        showPhoto: function(photo) {
-            let date = new Date(Date.parse(photo.date));
-            $("#image").attr("src", photo.url);
-            $("#description-input").val(photo.description);
-            $("#tags-input").val(photo.tags.join(", "));
+        showPhoto: function() {
+          console.log("showPhoto");
+          console.log(this.foto);
+            //let date = new Date(Date.parse(this.foto.date));
+            //$("#image").attr("src", this.foto.url);
+            //$("#description-input").val(this.foto.description);
+            $("#tags-input").val(this.foto.tags.join(", "));
         },
         getError: function(message) {
             return "<div onclick='removeError(this);' class='alert alert-danger' role='alert'><strong><i class='fa fa-times' aria-hidden= 'true'></i > Error! </strong>" + message + "</div>";
         },
         removeTag:function(tag){
-
           this.foto.tags = this.foto.tags.filter(function(e) { return e !== tag });
           console.log(this.foto.tags);
 
@@ -97,10 +135,12 @@ export default {
 
           $("#errors-container").empty();
           if(!Vue.hasBadWords(this.foto.title)&&!Vue.hasBadWords(this.foto.description)){
+          
+          
           let photo = {
           "description":this.foto.description,
           "title": this.foto.title,
-          "tags": new Set(this.foto.tags),
+          "tags": this.foto.tags,
           }
           let ref= this;
           // Aquí hacemos el envío
@@ -132,7 +172,10 @@ export default {
         }
     },
     beforeMount() {
+      this.loadTags();
       this.loadFoto();
+      this.showPhoto();
+      
     },
 }
 </script>

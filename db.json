@@ -441,30 +441,19 @@
     {
       "url": "https://i.pinimg.com/originals/70/fa/97/70fa97bac09e524bae4c006a1ead5512.jpg",
       "title": "Perrito",
-      "description": "Perro bonito",
+      "description": "Perro bonito pequeño",
       "date": "Fri Jun 05 2020 22:46:51 GMT+0200 (hora de verano de Europa central)",
       "upvotes": 0,
       "downvotes": 0,
       "tags": [
         "perro",
         "cute",
-        "hermoso"
+        "hermoso",
+        "naturaleza"
       ],
       "userId": "2",
       "comments": [],
       "id": 9
-    },
-    {
-      "url": "https://i2.wp.com/thehappening.com/wp-content/uploads/2018/12/sombreros-perritos-7.jpg?fit=1024%2C694&ssl=1",
-      "title": "Perro",
-      "description": "Perrote",
-      "date": "Fri Jun 05 2020 23:31:18 GMT+0200 (hora de verano de Europa central)",
-      "upvotes": 0,
-      "downvotes": 0,
-      "tags": {},
-      "userId": "2",
-      "comments": [],
-      "id": 11
     }
   ],
   "tags": [
