@@ -65,6 +65,19 @@
       "likes": [],
       "dislikes": [],
       "id": 8
+    },
+    {
+      "email": "hola@gmail.com",
+      "password": "$2a$10$CoW0bU9ISFojYCIiuse56e1dQJQJyJ6g6c/Y.zrt./aYOn6Kh89Oa",
+      "name": "Ejemplo1",
+      "surname": "Ejemplo2",
+      "phone": "648506499",
+      "user": "hola",
+      "followers": [],
+      "following": [],
+      "likes": [],
+      "dislikes": [],
+      "id": 9
     }
   ],
   "history": [
@@ -122,6 +135,11 @@
     },
     {
       "id": "8",
+      "followers": [],
+      "following": []
+    },
+    {
+      "id": "9",
       "followers": [],
       "following": []
     }

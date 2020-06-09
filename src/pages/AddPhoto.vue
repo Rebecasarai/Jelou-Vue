@@ -87,7 +87,12 @@ export default {
       }
     },
     selecTag(tag){
-      this.tagsSelected.push(tag);
+      var index = this.tagsSelected.indexOf(tag);
+
+      if (!(index > -1)) {
+        this.tagsSelected.push(tag);
+      }
+
       this.tagsInput = [];
     },
     loadTags: function() {
@@ -112,10 +117,10 @@ export default {
       let url = $("#url-input").val();
       let title = $("#title-input").val();
       let description = $("#description-input").val();
-      let t = $("#tags-input").val().split(",").map(tag => tag.trim());
-      let tags=new Set(t);
-      let date = new Date().toString();
+      /* t = $("#tags-input").val().split(",").map(tag => tag.trim());*/
+      let t = this.tagsSelected.map(t=> t.tag);
 
+      let date = new Date().toString();
 
       if(!Vue.hasBadWords(title)&&!Vue.hasBadWords(description)){
         if(!(this.fotos.length >= Vue.limiteFotos)){
@@ -128,10 +133,12 @@ export default {
       "date": date,
       "upvotes": 0,
       "downvotes": 0,
-      "tags": tags,
+      "tags": t,
       "userId": localStorage.getItem("id"),
       "comments": []
     }
+
+    console.log(photo);
       // Aquí hacemos el envío
       var ref= this;
       fetch('http://localhost:3000/photos/', {
