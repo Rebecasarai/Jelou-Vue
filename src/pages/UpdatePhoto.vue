@@ -35,7 +35,7 @@
                   >
                     Crear nueva <font-awesome-icon icon="tag" />
                   </router-link></a>
-                <p strong class="fadeIn third mt-2">Hacer imagen privada 
+                <p strong class="fadeIn third mt-2">Hacer imagen publica 
                     <label class="switch">
                     <input type="checkbox" v-model="foto.public" >
                     <span class="slider round"></span>

@@ -203,6 +203,10 @@ export default {
                       //element.date=date.getFullYear()+"/"+date.getMonth()+"/"+date.getDay();
                       ref.fotos = Array.from(response.data);
 
+                      if(!(ref.isAutenticado)){
+                        ref.fotos = ref.fotos.filter(f=>f.public== true);
+                      }
+
                     }
             }).catch(function(error) {
                 console.log("Error al pedir las fotos: " + error);
@@ -459,8 +463,8 @@ export default {
     async beforeMount() {
       
         this.loadUsers();
-        this.loadPhotos();
         this.getLoggedUser();
+        this.loadPhotos();
         //this.getUsername(17);
     },
 }
