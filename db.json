@@ -78,6 +78,19 @@
       "likes": [],
       "dislikes": [],
       "id": 9
+    },
+    {
+      "email": "ejemplo@gmail.com",
+      "password": "$2a$10$qE8BnRCAuZ0SXlEGxj8.iuhjo6I4Kenlj3bE1po.5cI2893Q6D5/2",
+      "name": "ejemplo1",
+      "surname": "ejemplo2",
+      "phone": "648506491",
+      "user": "ejemplote",
+      "followers": [],
+      "following": [],
+      "likes": [],
+      "dislikes": [],
+      "id": 10
     }
   ],
   "history": [
@@ -140,6 +153,11 @@
     },
     {
       "id": "9",
+      "followers": [],
+      "following": []
+    },
+    {
+      "id": "10",
       "followers": [],
       "following": []
     }
@@ -454,6 +472,20 @@
       "userId": "2",
       "comments": [],
       "id": 9
+    },
+    {
+      "url": "https://images.adsttc.com/media/images/5d34/e507/284d/d109/5600/0240/newsletter/_FI.jpg?1563747560",
+      "title": "Casa de ensueño",
+      "description": "Casa de mis sueños",
+      "date": "Tue Jun 09 2020 13:10:10 GMT+0200 (hora de verano de Europa central)",
+      "upvotes": 0,
+      "downvotes": 0,
+      "tags": [
+        "casa"
+      ],
+      "userId": "10",
+      "comments": [],
+      "id": 10
     }
   ],
   "tags": [
@@ -484,6 +516,14 @@
     {
       "tag": "gallo",
       "id": 7
+    },
+    {
+      "tag": "casa",
+      "id": 8
+    },
+    {
+      "tag": "animales",
+      "id": 9
     }
   ]
 }

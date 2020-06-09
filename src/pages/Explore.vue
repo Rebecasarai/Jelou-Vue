@@ -17,7 +17,7 @@
               <div class="list-group " >
                   <a href="#" v-on:click="mostrarFotosPorEtiqueta(t.tag)" v-for="t in this.tags" :key="t.id" 
                   class="list-group-item list-group-item-action verde" 
-                  v-bind:class="{ active: t.tag==tag }"> {{t.tag}} <span class="float-right"></span></a>
+                  v-bind:class="{ active: t.tag==tag }"> {{t.tag}} <span class="float-right"> {{getTotalByTags(t)}} </span></a>
                   
                 </div>
             </div>
@@ -199,7 +199,13 @@ export default {
     }
   },
     methods: {
-
+      /**
+       * Devuelve el total de fotos que incluyen una etiqueta en particular pasada como parametro
+       */
+      getTotalByTags(tag){
+        let f = this.fotos.filter(f => f.tags.includes(tag.tag)); // Las fotos filtradas que incluyan la etiqueta 
+        return f.length;
+      },
         getStringDate(d){
           var dat= new Date(Date.parse(d));
           return dat.getFullYear() +"/"+dat.getMonth()+"/"+dat.getDay();
